@@ -1,6 +1,5 @@
 import { PixelHero } from "../components/hero/PixelHero";
 import { PixelStats } from "../components/stats/PixelStats";
-import { PixelPriceChart } from "../components/price/PixelPriceChart";
 import { TokenomicsWheel } from "../components/TokenomicsWheel";
 import { PixelGallery } from "../components/PixelGallery";
 import { PixelBuyCard } from "../components/PixelBuyCard";
@@ -14,15 +13,11 @@ const Index = () => {
         <PixelStats />
       </section>
 
-      <section className="py-20 px-4 bg-pixel-light">
-        <PixelPriceChart />
-      </section>
-
       <section className="py-20 px-4">
         <TokenomicsWheel />
       </section>
 
-      <section className="py-20 px-4 bg-pixel-light">
+      <section className="py-20 px-4">
         <PixelGallery />
       </section>
 

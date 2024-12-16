@@ -83,6 +83,38 @@ export const PixelHero = () => {
           ease: "easeInOut"
         }}
       />
+
+      <motion.img
+        src="/lovable-uploads/cf0d077f-2871-4ef8-9433-b94ef305665a.png"
+        alt="Floating Penguin 2"
+        className="absolute bottom-1/4 left-[10%] w-20 h-20 md:w-32 md:h-32"
+        animate={{ 
+          y: [0, 20, 0],
+          x: [0, -10, 0],
+          rotate: [0, -10, 0]
+        }}
+        transition={{ 
+          duration: 6,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
+
+      <motion.img
+        src="/lovable-uploads/e109ba2f-0796-4ec3-a94b-b4d9295126ed.png"
+        alt="Floating Penguin 3"
+        className="absolute top-1/3 left-[20%] w-16 h-16 md:w-24 md:h-24"
+        animate={{ 
+          y: [-20, 20, -20],
+          x: [-10, 10, -10],
+          rotate: [-10, 10, -10]
+        }}
+        transition={{ 
+          duration: 7,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
     </div>
   );
 };
