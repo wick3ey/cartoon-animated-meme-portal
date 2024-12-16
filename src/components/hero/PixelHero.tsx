@@ -5,6 +5,7 @@ import { FloatingCharacter } from "../FloatingCharacter";
 
 export const PixelHero = () => {
   const { toast } = useToast();
+  const contractAddress = "0x1234567890abcdef1234567890abcdef12345678";
 
   const handleBuyClick = () => {
     toast({
@@ -12,6 +13,16 @@ export const PixelHero = () => {
       description: "Pudgy Pixel token launch is approaching!",
       duration: 3000,
       className: "bg-secondary/90 border-2 border-black text-black font-pixel",
+    });
+  };
+
+  const handleCopyClick = () => {
+    navigator.clipboard.writeText(contractAddress);
+    toast({
+      title: "Copied!",
+      description: "Contract address copied to clipboard",
+      duration: 2000,
+      className: "bg-primary/90 border-2 border-black text-white font-pixel",
     });
   };
 
@@ -87,6 +98,32 @@ export const PixelHero = () => {
           The Most Epic Pixel Token on Solana! 🎮
         </p>
 
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+          <div className="pixel-panel">
+            <h3 className="font-pixel text-primary mb-2">Liquidity</h3>
+            <p className="font-pixel text-green-500">LOCKED</p>
+          </div>
+          <div className="pixel-panel">
+            <h3 className="font-pixel text-primary mb-2">Contract</h3>
+            <p className="font-pixel text-green-500">REVOKED</p>
+          </div>
+        </div>
+
+        <div className="pixel-panel mb-8 p-4">
+          <h3 className="font-pixel text-primary mb-2">Contract Address</h3>
+          <div className="flex items-center justify-between bg-pixel-dark/50 p-2 rounded">
+            <p className="font-pixel text-xs sm:text-sm text-white truncate mr-2">
+              {contractAddress}
+            </p>
+            <button
+              onClick={handleCopyClick}
+              className="pixel-button text-xs py-1 px-3"
+            >
+              Copy
+            </button>
+          </div>
+        </div>
+
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <ComicButton 
             onClick={handleBuyClick}
@@ -95,10 +132,10 @@ export const PixelHero = () => {
             Buy Now! 💎
           </ComicButton>
           <ComicButton 
-            onClick={() => window.open("https://discord.gg", "_blank")}
+            onClick={() => window.open("https://t.me", "_blank")}
             className="pixel-button bg-gradient-to-r from-secondary to-accent"
           >
-            Join Discord 🎮
+            Join Telegram 🎮
           </ComicButton>
         </div>
       </motion.div>
