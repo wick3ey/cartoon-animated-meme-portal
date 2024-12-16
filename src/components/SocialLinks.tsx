@@ -7,12 +7,12 @@ export const SocialLinks = () => {
     {
       name: "Telegram",
       icon: "/lovable-uploads/dd40cea4-7497-4bab-9505-b8511f9346ef.png",
-      url: "https://t.me/",
+      url: "https://t.me/pudgypixel",
     },
     {
       name: "Twitter",
       icon: "/lovable-uploads/0c3f2d8f-fd5e-4e08-801d-1fb2d437f825.png",
-      url: "https://twitter.com/",
+      url: "https://x.com/pixelpudgy",
     },
     {
       name: "Raydium",
@@ -32,13 +32,15 @@ export const SocialLinks = () => {
   ];
 
   const handleSocialClick = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
-    e.preventDefault();
-    toast({
-      title: "Coming Soon!",
-      description: "We are waiting for update stay tuned",
-      className: "bg-secondary/90 border-2 border-black text-black font-pixel",
-      duration: 3000,
-    });
+    if (url.includes('raydium.io') || url.includes('magiceden.io') || url.includes('tensor.trade')) {
+      e.preventDefault();
+      toast({
+        title: "Coming Soon!",
+        description: "We are waiting for update stay tuned",
+        className: "bg-secondary/90 border-2 border-black text-black font-pixel",
+        duration: 3000,
+      });
+    }
   };
 
   return (
@@ -53,6 +55,8 @@ export const SocialLinks = () => {
           <motion.a
             key={social.name}
             href={social.url}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={(e) => handleSocialClick(e, social.url)}
             className="transform transition-all duration-200 hover:scale-110"
             whileHover={{ 

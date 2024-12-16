@@ -132,7 +132,7 @@ export const PixelHero = () => {
             Buy Now! 💎
           </ComicButton>
           <ComicButton 
-            onClick={() => window.open("https://t.me", "_blank")}
+            onClick={() => window.open("https://t.me/pudgypixel", "_blank")}
             className="pixel-button bg-gradient-to-r from-secondary to-accent"
           >
             Join Telegram 🎮
