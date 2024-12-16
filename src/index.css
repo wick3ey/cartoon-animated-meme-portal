@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 @tailwind base;
@@ -6,31 +7,37 @@
 
 @layer base {
   body {
-    @apply bg-comic-purple text-foreground overflow-x-hidden;
+    @apply bg-[#1A1F2C] text-foreground overflow-x-hidden;
   }
 }
 
 @layer components {
-  .comic-button {
-    @apply relative px-8 py-3 bg-primary text-white font-handwriting text-xl rounded-xl
-           shadow-[6px_6px_0_0_rgba(0,0,0,0.3)]
+  .pixel-button {
+    @apply relative px-8 py-3 bg-primary text-white font-pixel text-xl
+           border-4 border-black
+           shadow-[4px_4px_0_0_rgba(0,0,0,0.8)]
            transition-all duration-150
-           hover:translate-x-[3px] hover:translate-y-[3px]
-           hover:shadow-[3px_3px_0_0_rgba(0,0,0,0.3)]
-           active:translate-x-[6px] active:translate-y-[6px]
+           hover:translate-x-[2px] hover:translate-y-[2px]
+           hover:shadow-[2px_2px_0_0_rgba(0,0,0,0.8)]
+           active:translate-x-[4px] active:translate-y-[4px]
            active:shadow-none;
   }
 
-  .comic-panel {
-    @apply relative bg-white p-6 rounded-lg border-4 border-black
-           shadow-[8px_8px_0_0_rgba(0,0,0,0.2)]
+  .pixel-panel {
+    @apply relative bg-white p-6 
+           border-4 border-black
+           shadow-[8px_8px_0_0_rgba(0,0,0,0.8)]
            before:absolute before:content-[''] 
            before:top-2 before:left-2 before:right-2 before:bottom-2
-           before:border-2 before:border-black before:rounded-lg;
+           before:border-2 before:border-black;
   }
 
-  .floating-character {
-    @apply absolute animate-float cursor-pointer transition-transform
-           hover:scale-110 duration-300;
+  .pixel-shadow {
+    text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.8);
   }
+}
+
+.font-pixel {
+  font-family: 'Press Start 2P', cursive;
+  letter-spacing: -0.05em;
 }

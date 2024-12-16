@@ -36,40 +36,34 @@ export default {
           DEFAULT: "#D946EF",
           foreground: "#ffffff",
         },
-        comic: {
-          blue: "#0EA5E9",
-          purple: "#E5DEFF",
-          peach: "#FDE1D3",
+        pixel: {
+          gray: "#8E9196",
+          dark: "#1A1F2C",
+          white: "#FFFFFF",
+          black: "#000000",
+          light: "#F1F1F1",
         },
+      },
+      fontFamily: {
+        pixel: ["Press Start 2P", "cursive"],
       },
       keyframes: {
         "float": {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-20px)" },
         },
-        "squish": {
-          "0%, 100%": { transform: "scale(1)" },
-          "50%": { transform: "scale(0.9, 1.1)" },
-        },
-        "writing": {
-          "0%": { "stroke-dashoffset": "1000" },
-          "100%": { "stroke-dashoffset": "0" },
-        },
-        "pop": {
-          "0%": { transform: "scale(0)", opacity: "0" },
-          "80%": { transform: "scale(1.1)", opacity: "0.8" },
-          "100%": { transform: "scale(1)", opacity: "1" },
+        "glitch": {
+          "0%": { transform: "translate(0)" },
+          "20%": { transform: "translate(-2px, 2px)" },
+          "40%": { transform: "translate(-2px, -2px)" },
+          "60%": { transform: "translate(2px, 2px)" },
+          "80%": { transform: "translate(2px, -2px)" },
+          "100%": { transform: "translate(0)" },
         },
       },
       animation: {
         "float": "float 3s ease-in-out infinite",
-        "squish": "squish 0.5s ease-in-out",
-        "writing": "writing 2s linear forwards",
-        "pop": "pop 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
-      },
-      fontFamily: {
-        comic: ["Comic Sans MS", "cursive"],
-        handwriting: ["Permanent Marker", "cursive"],
+        "glitch": "glitch 0.5s ease-in-out infinite",
       },
     },
   },
