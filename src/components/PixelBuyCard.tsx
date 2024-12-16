@@ -3,16 +3,11 @@ import { useToast } from "@/components/ui/use-toast";
 
 export const PixelBuyCard = () => {
   const { toast } = useToast();
-  const contractAddress = "Coming Soon";
+  const contractAddress = "8NHecCyqseKnYKHAdzUPhBFbD3JWfGwYrHozXcDCpump";
 
   const handleBuy = (e: React.MouseEvent) => {
     e.preventDefault();
-    toast({
-      title: "Coming Soon!",
-      description: "Buy function will be available soon",
-      className: "bg-secondary/90 border-2 border-black text-black font-pixel",
-      duration: 3000,
-    });
+    window.open(`https://pump.fun/token/${contractAddress}`, '_blank');
   };
 
   return (
@@ -51,7 +46,7 @@ export const PixelBuyCard = () => {
 
         <div className="mt-6 text-center">
           <p className="font-pixel text-xs text-primary/60">
-            Available on Raydium Soon
+            Available on Pump.fun
           </p>
         </div>
       </motion.div>

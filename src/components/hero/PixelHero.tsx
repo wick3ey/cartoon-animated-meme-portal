@@ -5,16 +5,11 @@ import { FloatingCharacter } from "../FloatingCharacter";
 
 export const PixelHero = () => {
   const { toast } = useToast();
-  const contractAddress = "Coming Soon";
+  const contractAddress = "8NHecCyqseKnYKHAdzUPhBFbD3JWfGwYrHozXcDCpump";
 
   const handleBuyClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    toast({
-      title: "Coming Soon!",
-      description: "Buy function will be available soon",
-      className: "bg-secondary/90 border-2 border-black text-black font-pixel",
-      duration: 3000,
-    });
+    window.open(`https://pump.fun/token/${contractAddress}`, '_blank');
   };
 
   const handleCopyClick = () => {

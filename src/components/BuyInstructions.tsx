@@ -33,7 +33,7 @@ const InstructionStep = ({ number, title, description, icon }: {
 };
 
 export const BuyInstructions = () => {
-  const contractAddress = "Coming Soon";
+  const contractAddress = "8NHecCyqseKnYKHAdzUPhBFbD3JWfGwYrHozXcDCpump";
 
   return (
     <div className="max-w-4xl mx-auto px-4">
@@ -65,8 +65,8 @@ export const BuyInstructions = () => {
         
         <InstructionStep
           number={4}
-          title="Open Phantom Swap"
-          description="In your Phantom wallet, click on 'Swap' and search for $PUDIX or paste the contract address."
+          title="Open Pump.fun"
+          description="Visit pump.fun and paste the contract address to buy $PUDIX directly."
           icon="🔄"
         />
         
