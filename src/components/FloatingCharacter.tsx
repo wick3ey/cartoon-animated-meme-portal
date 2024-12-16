@@ -18,8 +18,9 @@ export const FloatingCharacter = ({ src, alt, className = "", delay = 0 }: Float
       transition={{ delay, duration: 0.5, type: "spring" }}
       drag
       dragConstraints={{ left: -100, right: 100, top: -100, bottom: 100 }}
-      whileHover={{ scale: 1.1 }}
+      whileHover={{ scale: 1.1, rotate: [0, -10, 10, 0] }}
       whileTap={{ scale: 0.9 }}
+      whileDrag={{ scale: 1.2 }}
     />
   );
 };
