@@ -5,18 +5,12 @@ import { FloatingCharacter } from "../FloatingCharacter";
 
 export const PixelHero = () => {
   const { toast } = useToast();
-  const contractAddress = "8NHecCyqseKnYKHAdzUPhBFbD3JWfGwYrHozXcDCpump";
 
   const handleBuyClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    window.open(`https://pump.fun/coin/${contractAddress}`, '_blank');
-  };
-
-  const handleCopyClick = () => {
-    navigator.clipboard.writeText(contractAddress);
     toast({
-      title: "Copied!",
-      description: "Contract address copied to clipboard",
+      title: "Coming Soon!",
+      description: "Trading will be available soon",
       duration: 2000,
       className: "bg-primary/90 border-2 border-black text-white font-pixel",
     });
@@ -102,21 +96,6 @@ export const PixelHero = () => {
           <div className="pixel-panel">
             <h3 className="font-pixel text-primary mb-2">Contract</h3>
             <p className="font-pixel text-green-500">REVOKED</p>
-          </div>
-        </div>
-
-        <div className="pixel-panel mb-8 p-4">
-          <h3 className="font-pixel text-primary mb-2">Contract Address</h3>
-          <div className="flex items-center justify-between bg-pixel-dark/50 p-2 rounded">
-            <p className="font-pixel text-xs sm:text-sm text-white truncate mr-2">
-              {contractAddress}
-            </p>
-            <button
-              onClick={handleCopyClick}
-              className="pixel-button text-xs py-1 px-3"
-            >
-              Copy
-            </button>
           </div>
         </div>
 

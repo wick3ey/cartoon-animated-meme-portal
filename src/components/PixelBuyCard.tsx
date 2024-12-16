@@ -3,11 +3,15 @@ import { useToast } from "@/components/ui/use-toast";
 
 export const PixelBuyCard = () => {
   const { toast } = useToast();
-  const contractAddress = "8NHecCyqseKnYKHAdzUPhBFbD3JWfGwYrHozXcDCpump";
 
   const handleBuy = (e: React.MouseEvent) => {
     e.preventDefault();
-    window.open(`https://pump.fun/coin/${contractAddress}`, '_blank');
+    toast({
+      title: "Coming Soon!",
+      description: "Trading will be available soon",
+      duration: 2000,
+      className: "bg-primary/90 border-2 border-black text-white font-pixel",
+    });
   };
 
   return (
@@ -46,7 +50,7 @@ export const PixelBuyCard = () => {
 
         <div className="mt-6 text-center">
           <p className="font-pixel text-xs text-primary/60">
-            Available on Pump.fun
+            Available Soon
           </p>
         </div>
       </motion.div>

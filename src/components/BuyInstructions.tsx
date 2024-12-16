@@ -33,8 +33,6 @@ const InstructionStep = ({ number, title, description, icon }: {
 };
 
 export const BuyInstructions = () => {
-  const contractAddress = "8NHecCyqseKnYKHAdzUPhBFbD3JWfGwYrHozXcDCpump";
-
   return (
     <div className="max-w-4xl mx-auto px-4">
       <h2 className="font-pixel text-3xl text-center text-primary mb-12 glow-text">
@@ -66,14 +64,9 @@ export const BuyInstructions = () => {
         <InstructionStep
           number={4}
           title="Open Pump.fun"
-          description="Visit pump.fun and paste the contract address to buy $PUDIX directly."
+          description="Visit pump.fun to buy $PUDIX directly."
           icon="🔄"
         />
-        
-        <div className="pixel-panel mt-8">
-          <h3 className="font-pixel text-lg text-primary mb-2">Contract Address</h3>
-          <p className="font-pixel text-sm text-gray-400">{contractAddress}</p>
-        </div>
         
         <motion.div 
           className="pixel-panel bg-gradient-to-r from-primary/20 to-accent/20"
@@ -81,7 +74,7 @@ export const BuyInstructions = () => {
         >
           <h3 className="font-pixel text-lg text-primary mb-2">Pro Tips</h3>
           <ul className="space-y-2 text-sm text-gray-400">
-            <li>• Always verify the contract address</li>
+            <li>• Always verify contract details</li>
             <li>• Keep some SOL for transaction fees</li>
             <li>• Join our Telegram for support</li>
           </ul>
