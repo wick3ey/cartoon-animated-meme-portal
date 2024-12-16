@@ -5,7 +5,7 @@ import { FloatingCharacter } from "../FloatingCharacter";
 
 export const PixelHero = () => {
   const { toast } = useToast();
-  const contractAddress = "B5jVmWqF26DYCznsjWRKwiiqEN675pZsrAMG1jnJpump";
+  const contractAddress = "Coming Soon";
 
   const handleBuyClick = (e: React.MouseEvent) => {
     e.preventDefault();
