@@ -87,26 +87,6 @@ export const PixelHero = () => {
           The Most Epic Pixel Token on Solana! 🎮
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
-          <div className="pixel-panel">
-            <p className="text-2xl mb-2">🎮</p>
-            <h3 className="font-pixel text-xl text-primary mb-1">Supply</h3>
-            <p className="font-pixel text-2xl">1B</p>
-          </div>
-          
-          <div className="pixel-panel">
-            <p className="text-2xl mb-2">👾</p>
-            <h3 className="font-pixel text-xl text-primary mb-1">Holders</h3>
-            <p className="font-pixel text-2xl">10K+</p>
-          </div>
-          
-          <div className="pixel-panel">
-            <p className="text-2xl mb-2">🕹️</p>
-            <h3 className="font-pixel text-xl text-primary mb-1">Market Cap</h3>
-            <p className="font-pixel text-2xl">$1M+</p>
-          </div>
-        </div>
-
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <ComicButton 
             onClick={handleBuyClick}
