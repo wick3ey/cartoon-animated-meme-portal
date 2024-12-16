@@ -1,9 +1,10 @@
 import { ButtonHTMLAttributes } from "react";
-import { motion } from "framer-motion";
+import { motion, HTMLMotionProps } from "framer-motion";
 
-interface ComicButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+type ComicButtonProps = HTMLMotionProps<"button"> & {
   children: React.ReactNode;
-}
+  className?: string;
+};
 
 export const ComicButton = ({ children, className = "", ...props }: ComicButtonProps) => {
   return (
