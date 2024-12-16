@@ -44,7 +44,7 @@ export const PixelHero = () => {
   ];
 
   return (
-    <div className="relative min-h-[80vh] flex flex-col items-center justify-start px-4 pt-8 md:pt-16">
+    <div className="relative min-h-screen flex flex-col items-center justify-start pt-8 md:pt-16 px-4">
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(139,92,246,0.05)_1px,transparent_0),linear-gradient(rgba(139,92,246,0.05)_1px,transparent_0)] bg-[length:24px_24px]" />
       
       <motion.div
@@ -71,7 +71,7 @@ export const PixelHero = () => {
           Pudgy Pixel
         </motion.h1>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-8">
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
           {penguins.map((penguin, index) => (
             <FloatingCharacter
               key={index}
@@ -83,11 +83,11 @@ export const PixelHero = () => {
           ))}
         </div>
 
-        <p className="font-pixel text-lg sm:text-xl md:text-2xl mb-8 text-white glow-text">
+        <p className="font-pixel text-lg sm:text-xl md:text-2xl mb-12 text-white glow-text">
           The Most Epic Pixel Token on Solana! 🎮
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
           <div className="pixel-panel">
             <p className="text-2xl mb-2">🎮</p>
             <h3 className="font-pixel text-xl text-primary mb-1">Supply</h3>
