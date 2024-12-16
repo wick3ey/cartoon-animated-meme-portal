@@ -69,13 +69,13 @@ export const PixelStats = () => {
       />
       <PixelStat 
         label="Holders" 
-        value="10K+" 
+        value="Loading.." 
         icon="👾" 
         color="#F97316"
       />
       <PixelStat 
         label="Market Cap" 
-        value="$1M+" 
+        value="Loading.." 
         icon="🕹️" 
         color="#D946EF"
       />
