@@ -29,14 +29,14 @@ const PixelStat = ({ label, value, icon, color }: PixelStatProps) => {
       </motion.div>
       
       <motion.h3 
-        className="font-pixel text-2xl mb-2"
+        className="font-pixel text-lg mb-2"
         style={{ color }}
       >
         {label}
       </motion.h3>
       
       <motion.p 
-        className="font-pixel text-4xl"
+        className="font-pixel text-2xl md:text-3xl break-words"
         animate={isHovered ? { 
           scale: [1, 1.2, 1],
           rotate: [0, 5, -5, 0]
