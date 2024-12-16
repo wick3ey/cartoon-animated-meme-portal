@@ -3,9 +3,9 @@ import { FloatingCharacter } from "../components/FloatingCharacter";
 import { ComicButton } from "../components/ComicButton";
 import { TokenStats } from "../components/TokenStats";
 import { useToast } from "@/components/ui/use-toast";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 const Index = () => {
   const { toast } = useToast();
@@ -13,9 +13,17 @@ const Index = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const heroRef = useRef(null);
   const isHeroInView = useInView(heroRef);
+  const [priceData, setPriceData] = useState([
+    { time: '1d', price: 0.5 },
+    { time: '2d', price: 0.7 },
+    { time: '3d', price: 0.6 },
+    { time: '4d', price: 0.8 },
+    { time: '5d', price: 1.2 },
+  ]);
 
-  // Parallax effekt för bakgrunden
+  // Parallax effect for background
   const backgroundY = useTransform(scrollY, [0, 1000], [0, 300]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
   
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -28,15 +36,15 @@ const Index = () => {
 
   const handleBuyClick = () => {
     toast({
-      title: "🚀 Till månen!",
-      description: "Snart kommer du kunna köpa tokens här!",
+      title: "🚀 To The Moon!",
+      description: "Token purchase feature coming soon!",
       duration: 3000,
     });
   };
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      {/* Parallax Bakgrund */}
+      {/* Parallax Background */}
       <motion.div 
         className="fixed inset-0 z-0"
         style={{ y: backgroundY }}
@@ -44,7 +52,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-comic-purple to-comic-peach opacity-50" />
       </motion.div>
 
-      {/* Hero Sektion */}
+      {/* Hero Section */}
       <section ref={heroRef} className="relative min-h-screen flex items-center justify-center px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -64,7 +72,7 @@ const Index = () => {
               ease: "easeInOut"
             }}
           >
-            Meme Token
+            Epic Meme Token
           </motion.h1>
 
           <motion.p
@@ -72,12 +80,12 @@ const Index = () => {
             animate={{ opacity: [0.8, 1, 0.8] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            Den mest episka meme token på Solana! 🚀
+            The most epic meme token on Solana! 🚀
           </motion.p>
 
           <div className="flex gap-4 justify-center">
             <ComicButton onClick={handleBuyClick}>
-              Köp Nu! 💎
+              Buy Now! 💎
             </ComicButton>
             <ComicButton 
               onClick={() => window.open("https://discord.gg", "_blank")}
@@ -88,7 +96,7 @@ const Index = () => {
           </div>
         </motion.div>
 
-        {/* Flytande Karaktärer */}
+        {/* Floating Characters */}
         <FloatingCharacter
           src="/placeholder.svg"
           alt="Mascot 1"
@@ -102,7 +110,7 @@ const Index = () => {
           delay={0.4}
         />
 
-        {/* Musföljande Element */}
+        {/* Mouse Following Element */}
         <motion.div
           className="fixed w-8 h-8 bg-accent rounded-full mix-blend-multiply filter blur-xl pointer-events-none z-50"
           animate={{
@@ -113,7 +121,7 @@ const Index = () => {
         />
       </section>
 
-      {/* Token Stats Sektion */}
+      {/* Token Stats Section */}
       <section className="py-20 px-4 bg-comic-peach relative">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -128,35 +136,63 @@ const Index = () => {
         </motion.div>
       </section>
 
-      {/* Roadmap Sektion */}
-      <section className="py-20 px-4 relative">
+      {/* Live Chart Section (Replacing Roadmap) */}
+      <section className="py-20 px-4 relative bg-white/80">
         <motion.h2
           className="text-center font-handwriting text-4xl md:text-5xl text-primary mb-12"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          Roadmap
+          Live Price Chart
         </motion.h2>
         
-        <div className="max-w-4xl mx-auto grid gap-8">
-          {[
-            { phase: "Fas 1", title: "Lansering", description: "Token lansering och community byggande" },
-            { phase: "Fas 2", title: "Tillväxt", description: "Partnerships och marknadsföring" },
-            { phase: "Fas 3", title: "Utveckling", description: "NFT collection och staking" }
-          ].map((item, index) => (
-            <motion.div
-              key={item.phase}
-              className="comic-panel"
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
-            >
-              <h3 className="font-handwriting text-2xl text-primary mb-2">{item.phase} - {item.title}</h3>
-              <p className="font-comic text-lg">{item.description}</p>
-            </motion.div>
-          ))}
+        <div className="max-w-4xl mx-auto h-[400px] comic-panel">
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart data={priceData}>
+              <XAxis dataKey="time" />
+              <YAxis />
+              <Tooltip 
+                contentStyle={{ 
+                  background: 'white',
+                  border: '2px solid black',
+                  borderRadius: '8px',
+                  fontFamily: 'Comic Sans MS'
+                }}
+              />
+              <Line 
+                type="monotone" 
+                dataKey="price" 
+                stroke="#8B5CF6" 
+                strokeWidth={3}
+                dot={{ fill: '#8B5CF6', r: 6 }}
+                activeDot={{ r: 8, fill: '#D946EF' }}
+              />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+
+        {/* Interactive Price Updates */}
+        <div className="mt-8 flex justify-center gap-4">
+          <ComicButton
+            onClick={() => {
+              const newData = [...priceData];
+              const lastPrice = newData[newData.length - 1].price;
+              newData.push({
+                time: `${newData.length + 1}d`,
+                price: lastPrice * (1 + Math.random() * 0.4 - 0.2)
+              });
+              newData.shift();
+              setPriceData(newData);
+              toast({
+                title: "📊 Price Updated!",
+                description: "Chart data refreshed with latest price",
+                duration: 2000,
+              });
+            }}
+          >
+            Refresh Price 📊
+          </ComicButton>
         </div>
       </section>
     </div>
