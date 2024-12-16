@@ -19,31 +19,31 @@ export const PixelHero = () => {
     {
       src: "/lovable-uploads/4ab986d4-8cb7-4a43-ad78-49cafa274a43.png",
       alt: "Classic Penguin",
-      className: "absolute top-0 left-[15%] w-24 h-24 md:w-32 md:h-32",
+      className: "absolute -top-8 -left-16 w-24 h-24 md:w-28 md:h-28",
       delay: 0.2
     },
     {
       src: "/lovable-uploads/82d3897e-ae79-4449-876f-e7b718bfe814.png",
       alt: "Rich Penguin",
-      className: "absolute top-10 right-[15%] w-24 h-24 md:w-32 md:h-32",
+      className: "absolute -top-8 -right-16 w-24 h-24 md:w-28 md:h-28",
       delay: 0.4
     },
     {
       src: "/lovable-uploads/12243131-205c-49ca-8205-d83513b4f615.png",
       alt: "3D Penguin",
-      className: "absolute -top-10 left-[35%] w-20 h-20 md:w-28 md:h-28",
+      className: "absolute -top-12 left-1/4 w-20 h-20 md:w-24 md:h-24",
       delay: 0.6
     },
     {
       src: "/lovable-uploads/523d2d95-4159-4be9-aefd-21d0d7b8a179.png",
       alt: "Cool Penguin",
-      className: "absolute top-20 left-[25%] w-20 h-20 md:w-28 md:h-28",
+      className: "absolute -bottom-8 -left-8 w-20 h-20 md:w-24 md:h-24",
       delay: 0.8
     },
     {
       src: "/lovable-uploads/3cc8bbf6-da98-4111-87a1-092626a128b3.png",
       alt: "Red Shirt Penguin",
-      className: "absolute -top-5 right-[35%] w-20 h-20 md:w-28 md:h-28",
+      className: "absolute -bottom-8 -right-8 w-20 h-20 md:w-24 md:h-24",
       delay: 1
     }
   ];
@@ -59,34 +59,36 @@ export const PixelHero = () => {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          {/* Floating Penguins */}
-          {penguins.map((penguin, index) => (
-            <FloatingCharacter
-              key={index}
-              src={penguin.src}
-              alt={penguin.alt}
-              className={penguin.className}
-              delay={penguin.delay}
-            />
-          ))}
+          <div className="relative">
+            {/* Floating Penguins */}
+            {penguins.map((penguin, index) => (
+              <FloatingCharacter
+                key={index}
+                src={penguin.src}
+                alt={penguin.alt}
+                className={penguin.className}
+                delay={penguin.delay}
+              />
+            ))}
 
-          <motion.h1 
-            className="font-pixel text-6xl md:text-8xl text-primary mb-6 pixel-shadow glow-text relative z-20"
-            animate={{
-              textShadow: [
-                "0 0 10px rgba(139,92,246,0.5)",
-                "0 0 20px rgba(139,92,246,0.7)",
-                "0 0 10px rgba(139,92,246,0.5)"
-              ]
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          >
-            Pudgy Pixel
-          </motion.h1>
+            <motion.h1 
+              className="font-pixel text-6xl md:text-8xl text-primary mb-6 pixel-shadow glow-text relative z-20"
+              animate={{
+                textShadow: [
+                  "0 0 10px rgba(139,92,246,0.5)",
+                  "0 0 20px rgba(139,92,246,0.7)",
+                  "0 0 10px rgba(139,92,246,0.5)"
+                ]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
+              Pudgy Pixel
+            </motion.h1>
+          </div>
 
           <p className="font-pixel text-xl md:text-2xl mb-8 text-white glow-text relative z-20">
             The Most Epic Pixel Token on Solana! 🎮
