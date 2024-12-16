@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { useToast } from "@/components/ui/use-toast";
 
 export const SocialLinks = () => {
+  const { toast } = useToast();
   const socials = [
     {
       name: "Telegram",
@@ -29,6 +31,16 @@ export const SocialLinks = () => {
     }
   ];
 
+  const handleSocialClick = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
+    e.preventDefault();
+    toast({
+      title: "Coming Soon!",
+      description: "We are waiting for update stay tuned",
+      className: "bg-secondary/90 border-2 border-black text-black font-pixel",
+      duration: 3000,
+    });
+  };
+
   return (
     <div className="max-w-4xl mx-auto">
       <motion.div 
@@ -41,8 +53,7 @@ export const SocialLinks = () => {
           <motion.a
             key={social.name}
             href={social.url}
-            target="_blank"
-            rel="noopener noreferrer"
+            onClick={(e) => handleSocialClick(e, social.url)}
             className="transform transition-all duration-200 hover:scale-110"
             whileHover={{ 
               scale: 1.1,
