@@ -33,7 +33,7 @@ const InstructionStep = ({ number, title, description, icon }: {
 };
 
 export const BuyInstructions = () => {
-  const contractAddress = "B5jVmWqF26DYCznsjWRKwiiqEN675pZsrAMG1jnJpump";
+  const contractAddress = "Coming Soon";
 
   return (
     <div className="max-w-4xl mx-auto px-4">
