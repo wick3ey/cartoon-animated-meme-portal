@@ -5,15 +5,10 @@ import { FloatingCharacter } from "../FloatingCharacter";
 
 export const PixelHero = () => {
   const { toast } = useToast();
-  const contractAddress = "Coming soon..";
+  const contractAddress = "B5jVmWqF26DYCznsjWRKwiiqEN675pZsrAMG1jnJpump";
 
   const handleBuyClick = () => {
-    toast({
-      title: "🎮 Coming Soon!",
-      description: "Pudgy Pixel token launch is approaching!",
-      duration: 3000,
-      className: "bg-secondary/90 border-2 border-black text-black font-pixel",
-    });
+    window.open(`https://pump.fun/coin/${contractAddress}`, "_blank");
   };
 
   const handleCopyClick = () => {

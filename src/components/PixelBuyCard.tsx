@@ -2,15 +2,10 @@ import { motion } from "framer-motion";
 import { useToast } from "@/components/ui/use-toast";
 
 export const PixelBuyCard = () => {
-  const { toast } = useToast();
+  const contractAddress = "B5jVmWqF26DYCznsjWRKwiiqEN675pZsrAMG1jnJpump";
 
   const handleBuy = () => {
-    toast({
-      title: "🐧 Coming Soon!",
-      description: "Pudgy Pixel token launch is approaching!",
-      duration: 3000,
-      className: "bg-secondary/90 border-2 border-black text-black font-pixel", // Använder secondary färgen (mörk orange) från vårt tema
-    });
+    window.open(`https://pump.fun/coin/${contractAddress}`, "_blank");
   };
 
   return (

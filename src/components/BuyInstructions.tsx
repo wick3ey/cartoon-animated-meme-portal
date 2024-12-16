@@ -33,6 +33,8 @@ const InstructionStep = ({ number, title, description, icon }: {
 };
 
 export const BuyInstructions = () => {
+  const contractAddress = "B5jVmWqF26DYCznsjWRKwiiqEN675pZsrAMG1jnJpump";
+
   return (
     <div className="max-w-4xl mx-auto px-4">
       <h2 className="font-pixel text-3xl text-center text-primary mb-12 glow-text">
@@ -70,7 +72,7 @@ export const BuyInstructions = () => {
         
         <div className="pixel-panel mt-8">
           <h3 className="font-pixel text-lg text-primary mb-2">Contract Address</h3>
-          <p className="font-pixel text-sm text-gray-400">Coming soon..</p>
+          <p className="font-pixel text-sm text-gray-400">{contractAddress}</p>
         </div>
         
         <motion.div 
