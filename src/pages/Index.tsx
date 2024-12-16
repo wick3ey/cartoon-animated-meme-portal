@@ -2,6 +2,10 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { FloatingCharacter } from "../components/FloatingCharacter";
 import { ComicButton } from "../components/ComicButton";
 import { TokenStats } from "../components/TokenStats";
+import { TokenomicsWheel } from "../components/TokenomicsWheel";
+import { LiveTransactions } from "../components/LiveTransactions";
+import { PriceAlertForm } from "../components/PriceAlertForm";
+import { SocialFeed } from "../components/SocialFeed";
 import { useToast } from "@/components/ui/use-toast";
 import { useState, useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
@@ -44,14 +48,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      {/* Parallax Background */}
-      <motion.div 
-        className="fixed inset-0 z-0"
-        style={{ y: backgroundY }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-comic-purple to-comic-peach opacity-50" />
-      </motion.div>
-
       {/* Hero Section */}
       <section ref={heroRef} className="relative min-h-screen flex items-center justify-center px-4">
         <motion.div
@@ -136,7 +132,7 @@ const Index = () => {
         </motion.div>
       </section>
 
-      {/* Live Chart Section (Replacing Roadmap) */}
+      {/* Live Chart Section */}
       <section className="py-20 px-4 relative bg-white/80">
         <motion.h2
           className="text-center font-handwriting text-4xl md:text-5xl text-primary mb-12"
@@ -171,29 +167,58 @@ const Index = () => {
             </LineChart>
           </ResponsiveContainer>
         </div>
+      </section>
 
-        {/* Interactive Price Updates */}
-        <div className="mt-8 flex justify-center gap-4">
-          <ComicButton
-            onClick={() => {
-              const newData = [...priceData];
-              const lastPrice = newData[newData.length - 1].price;
-              newData.push({
-                time: `${newData.length + 1}d`,
-                price: lastPrice * (1 + Math.random() * 0.4 - 0.2)
-              });
-              newData.shift();
-              setPriceData(newData);
-              toast({
-                title: "📊 Price Updated!",
-                description: "Chart data refreshed with latest price",
-                duration: 2000,
-              });
-            }}
-          >
-            Refresh Price 📊
-          </ComicButton>
-        </div>
+      {/* Tokenomics Section */}
+      <section className="py-20 px-4 bg-comic-purple/20">
+        <motion.h2
+          className="text-center font-handwriting text-4xl md:text-5xl text-primary mb-12"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+        >
+          Tokenomics
+        </motion.h2>
+        <TokenomicsWheel />
+      </section>
+
+      {/* Live Transactions Section */}
+      <section className="py-20 px-4 bg-white/80">
+        <motion.h2
+          className="text-center font-handwriting text-4xl md:text-5xl text-primary mb-12"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+        >
+          Live Activity
+        </motion.h2>
+        <LiveTransactions />
+      </section>
+
+      {/* Price Alert Section */}
+      <section className="py-20 px-4 bg-comic-peach/50">
+        <motion.h2
+          className="text-center font-handwriting text-4xl md:text-5xl text-primary mb-12"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+        >
+          Never Miss a Move
+        </motion.h2>
+        <PriceAlertForm />
+      </section>
+
+      {/* Social Feed Section */}
+      <section className="py-20 px-4 bg-white/80">
+        <motion.h2
+          className="text-center font-handwriting text-4xl md:text-5xl text-primary mb-12"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+        >
+          Community Feed
+        </motion.h2>
+        <SocialFeed />
       </section>
     </div>
   );
