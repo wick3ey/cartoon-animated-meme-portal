@@ -9,6 +9,7 @@ export const PixelBuyCard = () => {
       title: "🐧 Coming Soon!",
       description: "Pudgy Pixel token launch is approaching!",
       duration: 3000,
+      className: "bg-secondary/90 border-2 border-black text-black font-pixel", // Använder secondary färgen (mörk orange) från vårt tema
     });
   };
 
