@@ -3,6 +3,7 @@ import { PixelStats } from "../components/stats/PixelStats";
 import { TokenomicsWheel } from "../components/TokenomicsWheel";
 import { PixelGallery } from "../components/PixelGallery";
 import { PixelBuyCard } from "../components/PixelBuyCard";
+import { SocialLinks } from "../components/SocialLinks";
 
 const Index = () => {
   return (
@@ -24,6 +25,10 @@ const Index = () => {
       <section className="py-20 px-4">
         <PixelBuyCard />
       </section>
+
+      <footer className="py-12 px-4">
+        <SocialLinks />
+      </footer>
     </div>
   );
 };
