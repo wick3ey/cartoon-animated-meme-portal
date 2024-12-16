@@ -9,7 +9,7 @@ export const PixelHero = () => {
 
   const handleBuyClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    window.open(`https://pump.fun/token/${contractAddress}`, '_blank');
+    window.open(`https://pump.fun/coin/${contractAddress}`, '_blank');
   };
 
   const handleCopyClick = () => {
