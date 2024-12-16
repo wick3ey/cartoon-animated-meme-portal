@@ -3,7 +3,7 @@ import { useToast } from "@/components/ui/use-toast";
 
 export const PixelBuyCard = () => {
   const { toast } = useToast();
-  const contractAddress = "B5jVmWqF26DYCznsjWRKwiiqEN675pZsrAMG1jnJpump";
+  const contractAddress = "Coming Soon";
 
   const handleBuy = (e: React.MouseEvent) => {
     e.preventDefault();
