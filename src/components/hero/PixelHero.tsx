@@ -7,8 +7,14 @@ export const PixelHero = () => {
   const { toast } = useToast();
   const contractAddress = "B5jVmWqF26DYCznsjWRKwiiqEN675pZsrAMG1jnJpump";
 
-  const handleBuyClick = () => {
-    window.open(`https://pump.fun/coin/${contractAddress}`, "_blank");
+  const handleBuyClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    toast({
+      title: "Coming Soon!",
+      description: "Buy function will be available soon",
+      className: "bg-secondary/90 border-2 border-black text-black font-pixel",
+      duration: 3000,
+    });
   };
 
   const handleCopyClick = () => {
@@ -52,7 +58,7 @@ export const PixelHero = () => {
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-start pt-8 md:pt-16 px-4">
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(139,92,246,0.05)_1px,transparent_0),linear-gradient(rgba(139,92,246,0.05)_1px,transparent_0)] bg-[length:24px_24px]" />
-      
+
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -127,7 +133,7 @@ export const PixelHero = () => {
             Buy Now! 💎
           </ComicButton>
           <ComicButton 
-            onClick={() => window.open("https://t.me/pudgypixel", "_blank")}
+            onClick={handleBuyClick}
             className="pixel-button bg-gradient-to-r from-secondary to-accent"
           >
             Join Telegram 🎮

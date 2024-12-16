@@ -2,10 +2,17 @@ import { motion } from "framer-motion";
 import { useToast } from "@/components/ui/use-toast";
 
 export const PixelBuyCard = () => {
+  const { toast } = useToast();
   const contractAddress = "B5jVmWqF26DYCznsjWRKwiiqEN675pZsrAMG1jnJpump";
 
-  const handleBuy = () => {
-    window.open(`https://pump.fun/coin/${contractAddress}`, "_blank");
+  const handleBuy = (e: React.MouseEvent) => {
+    e.preventDefault();
+    toast({
+      title: "Coming Soon!",
+      description: "Buy function will be available soon",
+      className: "bg-secondary/90 border-2 border-black text-black font-pixel",
+      duration: 3000,
+    });
   };
 
   return (
