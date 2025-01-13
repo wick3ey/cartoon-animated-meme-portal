@@ -25,19 +25,23 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#DA291C", // McDonald's red
+          DEFAULT: "#8B5CF6",
           foreground: "#ffffff",
         },
         secondary: {
-          DEFAULT: "#FFC72C", // McDonald's yellow
-          foreground: "#000000",
+          DEFAULT: "#F97316",
+          foreground: "#ffffff",
         },
-        mcchicken: {
-          red: "#DA291C",
-          yellow: "#FFC72C",
-          brown: "#653818", // Rooster brown
-          orange: "#FF7A00", // Warm orange
-          cream: "#FFF5E1", // Light cream
+        accent: {
+          DEFAULT: "#D946EF",
+          foreground: "#ffffff",
+        },
+        pixel: {
+          gray: "#8E9196",
+          dark: "#1A1F2C",
+          white: "#FFFFFF",
+          black: "#000000",
+          light: "#F1F1F1",
         },
       },
       fontFamily: {
@@ -48,18 +52,18 @@ export default {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-20px)" },
         },
-        "wiggle": {
-          "0%, 100%": { transform: "rotate(0deg)" },
-          "25%": { transform: "rotate(-5deg)" },
-          "75%": { transform: "rotate(5deg)" },
-        }
+        "glitch": {
+          "0%": { transform: "translate(0)" },
+          "20%": { transform: "translate(-2px, 2px)" },
+          "40%": { transform: "translate(-2px, -2px)" },
+          "60%": { transform: "translate(2px, 2px)" },
+          "80%": { transform: "translate(2px, -2px)" },
+          "100%": { transform: "translate(0)" },
+        },
       },
       animation: {
         "float": "float 3s ease-in-out infinite",
-        "wiggle": "wiggle 2s ease-in-out infinite",
-      },
-      backgroundImage: {
-        'mcpattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFC72C' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+        "glitch": "glitch 0.5s ease-in-out infinite",
       },
     },
   },
