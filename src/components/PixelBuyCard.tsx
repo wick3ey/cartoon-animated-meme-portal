@@ -6,12 +6,7 @@ export const PixelBuyCard = () => {
 
   const handleBuy = (e: React.MouseEvent) => {
     e.preventDefault();
-    toast({
-      title: "Coming Soon!",
-      description: "Trading will be available soon",
-      duration: 2000,
-      className: "bg-primary/90 border-2 border-black text-white font-pixel",
-    });
+    window.open(`https://raydium.io/swap/?inputCurrency=sol&outputCurrency=H8XPbZdXakPSSzAcmNvo8vHoZ1ji59F21UHwga4rpump`, '_blank');
   };
 
   return (
@@ -24,7 +19,7 @@ export const PixelBuyCard = () => {
         whileHover={{ scale: 1.02 }}
       >
         <h2 className="font-pixel text-2xl text-primary mb-6 text-center pixel-shadow glow-text">
-          Join The Pudgy Revolution
+          Join The McChicken Revolution
         </h2>
         
         <div className="space-y-6">
@@ -44,13 +39,13 @@ export const PixelBuyCard = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Buy Now 🚀
+            Buy $BAWK 🚀
           </motion.button>
         </div>
 
         <div className="mt-6 text-center">
-          <p className="font-pixel text-xs text-primary/60">
-            Available Soon
+          <p className="font-pixel text-xs text-gray-400">
+            Contract: H8XPbZdXakPSSzAcmNvo8vHoZ1ji59F21UHwga4rpump
           </p>
         </div>
       </motion.div>

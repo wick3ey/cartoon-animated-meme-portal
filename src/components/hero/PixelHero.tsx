@@ -69,7 +69,7 @@ export const PixelHero = () => {
             ease: "easeInOut"
           }}
         >
-          NEVER KILL YOURSELF
+          McChicken
         </motion.h1>
 
         <div className="flex flex-wrap justify-center gap-4 mb-12">

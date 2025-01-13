@@ -7,7 +7,7 @@ export const SocialLinks = () => {
     {
       name: "Telegram",
       icon: "/placeholder.svg",
-      url: "#",
+      url: "https://t.me/bawkmcchicken",
     },
     {
       name: "Twitter",
@@ -17,7 +17,7 @@ export const SocialLinks = () => {
     {
       name: "Raydium",
       icon: "/placeholder.svg",
-      url: "#",
+      url: `https://raydium.io/swap/?inputCurrency=sol&outputCurrency=H8XPbZdXakPSSzAcmNvo8vHoZ1ji59F21UHwga4rpump`,
     },
     {
       name: "Magic Eden",
@@ -31,14 +31,16 @@ export const SocialLinks = () => {
     }
   ];
 
-  const handleSocialClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    toast({
-      title: "Coming Soon!",
-      description: "This link will be available soon",
-      className: "bg-secondary/90 border-2 border-black text-black font-pixel",
-      duration: 3000,
-    });
+  const handleSocialClick = (name: string, url: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (url === "#") {
+      e.preventDefault();
+      toast({
+        title: "Coming Soon!",
+        description: "This link will be available soon",
+        className: "bg-secondary/90 border-2 border-black text-black font-pixel",
+        duration: 3000,
+      });
+    }
   };
 
   return (
@@ -53,7 +55,7 @@ export const SocialLinks = () => {
           <motion.a
             key={social.name}
             href={social.url}
-            onClick={handleSocialClick}
+            onClick={handleSocialClick(social.name, social.url)}
             className="transform transition-all duration-200 hover:scale-110"
             whileHover={{ 
               scale: 1.1,

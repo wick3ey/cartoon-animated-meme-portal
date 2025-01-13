@@ -36,7 +36,7 @@ export const BuyInstructions = () => {
   return (
     <div className="max-w-4xl mx-auto px-4">
       <h2 className="font-pixel text-3xl text-center text-primary mb-12 glow-text">
-        How to Buy $PUDIX
+        How to Buy $BAWK
       </h2>
       
       <div className="space-y-8">
