@@ -49,7 +49,8 @@ export const PixelGallery = () => {
             <motion.img
               src={item.src}
               alt={item.alt}
-              className="w-24 h-24 mb-4 rounded-lg bg-white p-4"
+              className="w-24 h-24 mb-4 rounded-lg bg-white p-2"
+              style={{ objectFit: 'contain' }}
               animate={{ y: [0, -10, 0] }}
               transition={{
                 duration: 2,
