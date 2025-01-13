@@ -98,18 +98,32 @@ export const PixelHero = () => {
               Buy Now! 💎
             </ComicButton>
           </a>
-          <a 
-            href="https://t.me/bawkmcchicken" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto"
-          >
-            <ComicButton 
-              className="pixel-button text-sm sm:text-base bg-gradient-to-r from-secondary to-accent w-full sm:w-auto py-3 sm:py-4 px-6 sm:px-8"
+          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+            <a 
+              href="https://t.me/bawkmcchicken" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto"
             >
-              Join Telegram 🍗
-            </ComicButton>
-          </a>
+              <ComicButton 
+                className="pixel-button text-sm sm:text-base bg-gradient-to-r from-secondary to-accent w-full sm:w-auto py-3 sm:py-4 px-6 sm:px-8"
+              >
+                Join Telegram 🍗
+              </ComicButton>
+            </a>
+            <a 
+              href="https://x.com/Mcchickensoll" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto"
+            >
+              <ComicButton 
+                className="pixel-button text-sm sm:text-base bg-gradient-to-r from-secondary to-accent w-full sm:w-auto py-3 sm:py-4 px-6 sm:px-8"
+              >
+                Join Twitter 🐦
+              </ComicButton>
+            </a>
+          </div>
         </div>
       </motion.div>
     </div>
