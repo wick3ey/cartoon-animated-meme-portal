@@ -12,39 +12,39 @@ export const PixelBuyCard = () => {
   return (
     <div className="max-w-md mx-auto">
       <motion.div
-        className="pixel-panel bg-gradient-to-br from-[#2A3040] to-[#1A1F2C] p-8"
+        className="mc-panel bg-gradient-to-br from-white to-mcchicken-cream p-8"
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
         whileHover={{ scale: 1.02 }}
       >
-        <h2 className="font-pixel text-2xl text-primary mb-6 text-center pixel-shadow glow-text">
+        <h2 className="font-pixel text-2xl text-mcchicken-red mb-6 text-center mc-shadow mc-glow">
           Join The McChicken Revolution
         </h2>
         
         <div className="space-y-6">
-          <div className="bg-[#2A3040]/80 p-4 rounded-lg border-2 border-primary/20">
-            <p className="font-pixel text-sm text-primary/80 mb-2">Current Price</p>
-            <p className="font-pixel text-2xl text-white glow-text">$0.0001</p>
+          <div className="bg-white/80 p-4 rounded-lg border-2 border-mcchicken-red/20">
+            <p className="font-pixel text-sm text-mcchicken-red/80 mb-2">Current Price</p>
+            <p className="font-pixel text-2xl text-mcchicken-brown mc-glow">$0.0001</p>
           </div>
           
-          <div className="bg-[#2A3040]/80 p-4 rounded-lg border-2 border-secondary/20">
-            <p className="font-pixel text-sm text-secondary/80 mb-2">24h Volume</p>
-            <p className="font-pixel text-2xl text-white glow-text">$150,000</p>
+          <div className="bg-white/80 p-4 rounded-lg border-2 border-mcchicken-yellow/20">
+            <p className="font-pixel text-sm text-mcchicken-orange/80 mb-2">24h Volume</p>
+            <p className="font-pixel text-2xl text-mcchicken-brown mc-glow">$150,000</p>
           </div>
           
           <motion.button
             onClick={handleBuy}
-            className="pixel-button w-full bg-gradient-to-r from-primary to-secondary text-white font-pixel text-lg pulse-glow"
+            className="mc-button w-full bg-gradient-to-r from-mcchicken-red to-mcchicken-yellow"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Buy $BAWK 🚀
+            Buy $BAWK 🍗
           </motion.button>
         </div>
 
         <div className="mt-6 text-center">
-          <p className="font-pixel text-xs text-gray-400">
+          <p className="font-pixel text-xs text-mcchicken-brown/70">
             Contract: H8XPbZdXakPSSzAcmNvo8vHoZ1ji59F21UHwga4rpump
           </p>
         </div>
