@@ -16,6 +16,16 @@ export const PixelGallery = () => {
       src: "/lovable-uploads/c74cda1d-b173-4ef9-ad30-1a164bbb8e49.png",
       alt: "McDonalds Logo",
       description: "The Third"
+    },
+    {
+      src: "/lovable-uploads/c74cda1d-b173-4ef9-ad30-1a164bbb8e49.png",
+      alt: "McDonalds Logo",
+      description: "The Fourth"
+    },
+    {
+      src: "/lovable-uploads/c74cda1d-b173-4ef9-ad30-1a164bbb8e49.png",
+      alt: "McDonalds Logo",
+      description: "The Fifth"
     }
   ];
 
@@ -25,7 +35,7 @@ export const PixelGallery = () => {
         Meet The Squad
       </h2>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
         {items.map((item, index) => (
           <motion.div
             key={index}
@@ -39,7 +49,7 @@ export const PixelGallery = () => {
             <motion.img
               src={item.src}
               alt={item.alt}
-              className="w-32 h-32 mb-4 rounded-lg bg-white p-4"
+              className="w-24 h-24 mb-4 rounded-lg bg-white p-4"
               animate={{ y: [0, -10, 0] }}
               transition={{
                 duration: 2,
@@ -47,7 +57,7 @@ export const PixelGallery = () => {
                 repeatType: "reverse"
               }}
             />
-            <h3 className="font-pixel text-lg text-primary mb-2">
+            <h3 className="font-pixel text-sm text-primary mb-2">
               {item.description}
             </h3>
           </motion.div>
