@@ -6,7 +6,7 @@ export const PixelBuyCard = () => {
 
   const handleBuy = (e: React.MouseEvent) => {
     e.preventDefault();
-    window.open(`https://pump.fun/coin/H8XPbZdXakPSSzAcmNvo8vHoZ1ji59F21UHwga4rpump`, '_blank');
+    window.open(`https://phantom.app/ul/browse`, '_blank');
   };
 
   return (
@@ -39,8 +39,14 @@ export const PixelBuyCard = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Buy $BAWK 🍗
+            Buy with Phantom 👻
           </motion.button>
+
+          <div className="text-sm text-gray-400 mt-4">
+            <p className="mb-2">1. Open Phantom Wallet</p>
+            <p className="mb-2">2. Click on Swap</p>
+            <p>3. Swap SOL for $BAWK</p>
+          </div>
         </div>
       </motion.div>
     </div>
