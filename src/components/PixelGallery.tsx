@@ -3,18 +3,18 @@ import { motion } from "framer-motion";
 export const PixelGallery = () => {
   const items = [
     {
-      src: "/placeholder.svg",
-      alt: "Item 1",
+      src: "/lovable-uploads/c74cda1d-b173-4ef9-ad30-1a164bbb8e49.png",
+      alt: "McDonalds Logo",
       description: "The First"
     },
     {
-      src: "/placeholder.svg",
-      alt: "Item 2",
+      src: "/lovable-uploads/c74cda1d-b173-4ef9-ad30-1a164bbb8e49.png",
+      alt: "McDonalds Logo",
       description: "The Second"
     },
     {
-      src: "/placeholder.svg",
-      alt: "Item 3",
+      src: "/lovable-uploads/c74cda1d-b173-4ef9-ad30-1a164bbb8e49.png",
+      alt: "McDonalds Logo",
       description: "The Third"
     }
   ];
@@ -39,7 +39,7 @@ export const PixelGallery = () => {
             <motion.img
               src={item.src}
               alt={item.alt}
-              className="w-32 h-32 mb-4"
+              className="w-32 h-32 mb-4 rounded-lg bg-white p-4"
               animate={{ y: [0, -10, 0] }}
               transition={{
                 duration: 2,
