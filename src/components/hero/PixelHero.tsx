@@ -47,6 +47,19 @@ export const PixelHero = () => {
           The Most Epic Token on Solana! 🎮
         </p>
 
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="w-48 h-48 mx-auto mb-12 relative"
+        >
+          <img
+            src="/lovable-uploads/cad35cd2-c8fc-4390-b961-d4ec8bcac9e3.png"
+            alt="McChicken Mascot"
+            className="w-full h-full object-contain animate-float"
+          />
+        </motion.div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
           <div className="pixel-panel">
             <h3 className="font-pixel text-primary mb-2">Liquidity</h3>
