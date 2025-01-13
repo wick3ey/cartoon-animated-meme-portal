@@ -1,7 +1,6 @@
 import { PixelHero } from "../components/hero/PixelHero";
 import { PixelStats } from "../components/stats/PixelStats";
 import { BuyInstructions } from "../components/BuyInstructions";
-import { PixelGallery } from "../components/PixelGallery";
 import { PixelBuyCard } from "../components/PixelBuyCard";
 import { SocialLinks } from "../components/SocialLinks";
 
@@ -24,10 +23,6 @@ const Index = () => {
 
       <section className="py-20 px-4">
         <BuyInstructions />
-      </section>
-
-      <section className="py-20 px-4">
-        <PixelGallery />
       </section>
 
       <section className="py-20 px-4">

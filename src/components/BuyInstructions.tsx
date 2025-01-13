@@ -1,4 +1,7 @@
 import { motion } from "framer-motion";
+import { Button } from "./ui/button";
+import { useToast } from "./ui/use-toast";
+import { Copy } from "lucide-react";
 
 const InstructionStep = ({ number, title, description, icon }: { 
   number: number;
@@ -33,6 +36,19 @@ const InstructionStep = ({ number, title, description, icon }: {
 };
 
 export const BuyInstructions = () => {
+  const { toast } = useToast();
+  const contractAddress = "H8XPbZdXakPSSzAcmNvo8vHoZ1ji59F21UHwga4rpump";
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(contractAddress);
+    toast({
+      title: "Copied!",
+      description: "Contract address copied to clipboard",
+      className: "bg-primary/90 border-2 border-black text-white font-pixel",
+      duration: 2000,
+    });
+  };
+
   return (
     <div className="max-w-4xl mx-auto px-4">
       <h2 className="font-pixel text-3xl text-center text-primary mb-12 glow-text">
@@ -64,10 +80,30 @@ export const BuyInstructions = () => {
         <InstructionStep
           number={4}
           title="Open Pump.fun"
-          description="Visit pump.fun to buy $PUDIX directly."
+          description="Visit pump.fun to buy $BAWK directly."
           icon="🔄"
         />
-        
+
+        <motion.div 
+          className="pixel-panel bg-gradient-to-r from-primary/20 to-accent/20"
+          whileHover={{ scale: 1.02 }}
+        >
+          <div className="flex flex-col space-y-4">
+            <h3 className="font-pixel text-lg text-primary mb-2">Contract Address</h3>
+            <div className="flex items-center gap-2 bg-black/20 p-4 rounded-lg">
+              <code className="text-sm text-gray-300 flex-1 break-all">{contractAddress}</code>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={copyToClipboard}
+                className="hover:bg-primary/20"
+              >
+                <Copy className="h-4 w-4" />
+              </Button>
+            </div>
+          </div>
+        </motion.div>
+
         <motion.div 
           className="pixel-panel bg-gradient-to-r from-primary/20 to-accent/20"
           whileHover={{ scale: 1.02 }}

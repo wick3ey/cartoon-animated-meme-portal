@@ -6,7 +6,7 @@ export const PixelBuyCard = () => {
 
   const handleBuy = (e: React.MouseEvent) => {
     e.preventDefault();
-    window.open(`https://raydium.io/swap/?inputCurrency=sol&outputCurrency=H8XPbZdXakPSSzAcmNvo8vHoZ1ji59F21UHwga4rpump`, '_blank');
+    window.open(`https://pump.fun/coin/H8XPbZdXakPSSzAcmNvo8vHoZ1ji59F21UHwga4rpump`, '_blank');
   };
 
   return (
