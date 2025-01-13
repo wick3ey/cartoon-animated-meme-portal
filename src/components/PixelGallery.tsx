@@ -1,21 +1,21 @@
 import { motion } from "framer-motion";
 
 export const PixelGallery = () => {
-  const penguins = [
+  const items = [
     {
-      src: "/lovable-uploads/cf0d077f-2871-4ef8-9433-b94ef305665a.png",
-      alt: "Red Shirt Penguin",
-      description: "The OG Pudgy"
+      src: "/placeholder.svg",
+      alt: "Item 1",
+      description: "The First"
     },
     {
-      src: "/lovable-uploads/e109ba2f-0796-4ec3-a94b-b4d9295126ed.png",
-      alt: "Classic Penguin",
-      description: "The Classic"
+      src: "/placeholder.svg",
+      alt: "Item 2",
+      description: "The Second"
     },
     {
-      src: "/lovable-uploads/1ad0621d-b425-4967-b8dc-80b6ae05060f.png",
-      alt: "Rich Penguin",
-      description: "The Wealthy"
+      src: "/placeholder.svg",
+      alt: "Item 3",
+      description: "The Third"
     }
   ];
 
@@ -26,7 +26,7 @@ export const PixelGallery = () => {
       </h2>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {penguins.map((penguin, index) => (
+        {items.map((item, index) => (
           <motion.div
             key={index}
             className="pixel-panel bg-pixel-dark p-6 flex flex-col items-center"
@@ -37,8 +37,8 @@ export const PixelGallery = () => {
             whileTap={{ scale: 0.95 }}
           >
             <motion.img
-              src={penguin.src}
-              alt={penguin.alt}
+              src={item.src}
+              alt={item.alt}
               className="w-32 h-32 mb-4"
               animate={{ y: [0, -10, 0] }}
               transition={{
@@ -48,7 +48,7 @@ export const PixelGallery = () => {
               }}
             />
             <h3 className="font-pixel text-lg text-primary mb-2">
-              {penguin.description}
+              {item.description}
             </h3>
           </motion.div>
         ))}

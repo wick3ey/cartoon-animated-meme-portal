@@ -6,27 +6,27 @@ export const SocialLinks = () => {
   const socials = [
     {
       name: "Telegram",
-      icon: "/lovable-uploads/dd40cea4-7497-4bab-9505-b8511f9346ef.png",
+      icon: "/placeholder.svg",
       url: "#",
     },
     {
       name: "Twitter",
-      icon: "/lovable-uploads/0c3f2d8f-fd5e-4e08-801d-1fb2d437f825.png",
+      icon: "/placeholder.svg",
       url: "#",
     },
     {
       name: "Raydium",
-      icon: "/lovable-uploads/0b8e0bf3-48b5-447a-8d4b-5793f84c4b75.png",
+      icon: "/placeholder.svg",
       url: "#",
     },
     {
       name: "Magic Eden",
-      icon: "/lovable-uploads/60b1a9e2-4255-42fd-a828-37480f61017a.png",
+      icon: "/placeholder.svg",
       url: "#",
     },
     {
       name: "Tensor",
-      icon: "/lovable-uploads/ec61c586-869c-4f94-bb1c-aee747d3e303.png",
+      icon: "/placeholder.svg",
       url: "#",
     }
   ];

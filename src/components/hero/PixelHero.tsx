@@ -16,30 +16,30 @@ export const PixelHero = () => {
     });
   };
 
-  const penguins = [
+  const items = [
     {
-      src: "/lovable-uploads/4ab986d4-8cb7-4a43-ad78-49cafa274a43.png",
-      alt: "Classic Penguin",
+      src: "/placeholder.svg",
+      alt: "Item 1",
       delay: 0.2
     },
     {
-      src: "/lovable-uploads/82d3897e-ae79-4449-876f-e7b718bfe814.png",
-      alt: "Rich Penguin",
+      src: "/placeholder.svg",
+      alt: "Item 2",
       delay: 0.4
     },
     {
-      src: "/lovable-uploads/12243131-205c-49ca-8205-d83513b4f615.png",
-      alt: "3D Penguin",
+      src: "/placeholder.svg",
+      alt: "Item 3",
       delay: 0.6
     },
     {
-      src: "/lovable-uploads/523d2d95-4159-4be9-aefd-21d0d7b8a179.png",
-      alt: "Cool Penguin",
+      src: "/placeholder.svg",
+      alt: "Item 4",
       delay: 0.8
     },
     {
-      src: "/lovable-uploads/3cc8bbf6-da98-4111-87a1-092626a128b3.png",
-      alt: "Red Shirt Penguin",
+      src: "/placeholder.svg",
+      alt: "Item 5",
       delay: 1
     }
   ];
@@ -69,23 +69,23 @@ export const PixelHero = () => {
             ease: "easeInOut"
           }}
         >
-          Pudgy Pixel
+          NEVER KILL YOURSELF
         </motion.h1>
 
         <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {penguins.map((penguin, index) => (
+          {items.map((item, index) => (
             <FloatingCharacter
               key={index}
-              src={penguin.src}
-              alt={penguin.alt}
+              src={item.src}
+              alt={item.alt}
               className="w-16 h-16 md:w-20 md:h-20"
-              delay={penguin.delay}
+              delay={item.delay}
             />
           ))}
         </div>
 
         <p className="font-pixel text-lg sm:text-xl md:text-2xl mb-12 text-white glow-text">
-          The Most Epic Pixel Token on Solana! 🎮
+          The Most Epic Token on Solana! 🎮
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
