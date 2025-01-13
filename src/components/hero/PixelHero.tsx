@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { ComicButton } from "../ComicButton";
 import { useToast } from "@/components/ui/use-toast";
-import { FloatingCharacter } from "../FloatingCharacter";
 
 export const PixelHero = () => {
   const { toast } = useToast();
@@ -15,34 +14,6 @@ export const PixelHero = () => {
       className: "bg-primary/90 border-2 border-black text-white font-pixel",
     });
   };
-
-  const items = [
-    {
-      src: "/placeholder.svg",
-      alt: "Item 1",
-      delay: 0.2
-    },
-    {
-      src: "/placeholder.svg",
-      alt: "Item 2",
-      delay: 0.4
-    },
-    {
-      src: "/placeholder.svg",
-      alt: "Item 3",
-      delay: 0.6
-    },
-    {
-      src: "/placeholder.svg",
-      alt: "Item 4",
-      delay: 0.8
-    },
-    {
-      src: "/placeholder.svg",
-      alt: "Item 5",
-      delay: 1
-    }
-  ];
 
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-start pt-8 md:pt-16 px-4">
@@ -71,18 +42,6 @@ export const PixelHero = () => {
         >
           McChicken
         </motion.h1>
-
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {items.map((item, index) => (
-            <FloatingCharacter
-              key={index}
-              src={item.src}
-              alt={item.alt}
-              className="w-16 h-16 md:w-20 md:h-20"
-              delay={item.delay}
-            />
-          ))}
-        </div>
 
         <p className="font-pixel text-lg sm:text-xl md:text-2xl mb-12 text-white glow-text">
           The Most Epic Token on Solana! 🎮
