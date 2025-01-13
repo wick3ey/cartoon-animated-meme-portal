@@ -39,14 +39,25 @@ export const BuyInstructions = () => {
   const { toast } = useToast();
   const contractAddress = "H8XPbZdXakPSSzAcmNvo8vHoZ1ji59F21UHwga4rpump";
 
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(contractAddress);
-    toast({
-      title: "Copied!",
-      description: "Contract address copied to clipboard",
-      className: "bg-primary/90 border-2 border-black text-white font-pixel",
-      duration: 2000,
-    });
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(contractAddress);
+      toast({
+        title: "Copied!",
+        description: "Contract address copied to clipboard",
+        className: "bg-primary/90 border-2 border-black text-white font-pixel",
+        duration: 2000,
+      });
+      console.log("Address copied:", contractAddress); // Debug log
+    } catch (err) {
+      console.error("Failed to copy:", err);
+      toast({
+        title: "Error",
+        description: "Failed to copy address",
+        className: "bg-red-500/90 border-2 border-black text-white font-pixel",
+        duration: 2000,
+      });
+    }
   };
 
   return (
@@ -93,10 +104,10 @@ export const BuyInstructions = () => {
             <div className="flex items-center gap-2 bg-black/20 p-4 rounded-lg">
               <code className="text-sm text-gray-300 flex-1 break-all">{contractAddress}</code>
               <Button
-                variant="ghost"
+                variant="outline"
                 size="icon"
                 onClick={copyToClipboard}
-                className="hover:bg-primary/20"
+                className="hover:bg-primary/20 active:scale-95 transition-transform"
               >
                 <Copy className="h-4 w-4" />
               </Button>
