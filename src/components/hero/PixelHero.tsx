@@ -62,7 +62,7 @@ export const PixelHero = () => {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="w-48 h-48 mx-auto mb-12 relative"
+          className="w-96 h-96 mx-auto mb-16 relative"
         >
           <img
             src="/lovable-uploads/cad35cd2-c8fc-4390-b961-d4ec8bcac9e3.png"
