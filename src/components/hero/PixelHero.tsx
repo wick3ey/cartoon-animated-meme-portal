@@ -10,15 +10,15 @@ export const PixelHero = () => {
     try {
       await navigator.clipboard.writeText(contractAddress);
       toast({
-        title: "Kopierad!",
-        description: "Kontraktadressen har kopierats till urklipp",
+        title: "Copied!",
+        description: "Contract address copied to clipboard",
         duration: 2000,
         className: "bg-primary/90 border-2 border-black text-white font-pixel",
       });
     } catch (err) {
       toast({
-        title: "Fel",
-        description: "Kunde inte kopiera adressen",
+        title: "Error",
+        description: "Could not copy the address",
         duration: 2000,
         variant: "destructive",
       });
