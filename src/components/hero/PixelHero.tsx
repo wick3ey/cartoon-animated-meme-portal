@@ -44,7 +44,7 @@ export const PixelHero = () => {
         </motion.h1>
 
         <p className="font-pixel text-lg sm:text-xl md:text-2xl mb-12 text-white glow-text">
-          The Most Epic Token on Solana! 🎮
+          The Most Epic Token on Solana! 🍗
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
