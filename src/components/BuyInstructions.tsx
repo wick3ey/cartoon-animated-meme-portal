@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { useToast } from "./ui/use-toast";
-import { Copy } from "lucide-react";
+import { Copy, Check } from "lucide-react";
+import { useState } from "react";
 
 const InstructionStep = ({ number, title, description, icon }: { 
   number: number;
@@ -37,24 +38,29 @@ const InstructionStep = ({ number, title, description, icon }: {
 
 export const BuyInstructions = () => {
   const { toast } = useToast();
+  const [copied, setCopied] = useState(false);
   const contractAddress = "H8XPbZdXakPSSzAcmNvo8vHoZ1ji59F21UHwga4rpump";
 
-  const copyToClipboard = async () => {
+  const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(contractAddress);
+      setCopied(true);
       toast({
-        title: "Copied!",
-        description: "Contract address copied to clipboard",
-        className: "bg-primary/90 border-2 border-black text-white font-pixel",
+        title: "Kopierad!",
+        description: "Kontraktadressen har kopierats till urklipp",
+        className: "bg-green-500 border-2 border-black text-white font-pixel",
         duration: 2000,
       });
-      console.log("Address copied:", contractAddress); // Debug log
+      
+      // Reset copy state after 2 seconds
+      setTimeout(() => setCopied(false), 2000);
+      
     } catch (err) {
-      console.error("Failed to copy:", err);
+      console.error("Kopieringsfel:", err);
       toast({
-        title: "Error",
-        description: "Failed to copy address",
-        className: "bg-red-500/90 border-2 border-black text-white font-pixel",
+        title: "Fel",
+        description: "Kunde inte kopiera adressen",
+        className: "bg-red-500 border-2 border-black text-white font-pixel",
         duration: 2000,
       });
     }
@@ -95,21 +101,34 @@ export const BuyInstructions = () => {
           icon="🔄"
         />
 
+        {/* Completely rebuilt contract address section */}
         <motion.div 
-          className="pixel-panel bg-gradient-to-r from-primary/20 to-accent/20"
-          whileHover={{ scale: 1.02 }}
+          className="pixel-panel relative overflow-hidden"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
         >
-          <div className="flex flex-col space-y-4">
-            <h3 className="font-pixel text-lg text-primary mb-2">Contract Address</h3>
-            <div className="flex items-center gap-2 bg-black/20 p-4 rounded-lg">
-              <code className="text-sm text-gray-300 flex-1 break-all">{contractAddress}</code>
+          <div className="p-6 space-y-4">
+            <h3 className="font-pixel text-lg text-primary mb-2 glow-text">Kontraktadress</h3>
+            <div className="flex items-center gap-3 bg-black/30 p-4 rounded-lg border-2 border-primary/20">
+              <div className="flex-1 font-mono text-sm text-gray-300 break-all select-all">
+                {contractAddress}
+              </div>
               <Button
                 variant="outline"
                 size="icon"
-                onClick={copyToClipboard}
-                className="hover:bg-primary/20 active:scale-95 transition-transform"
+                onClick={handleCopy}
+                className={`min-w-[40px] transition-all duration-200 ${
+                  copied 
+                    ? 'bg-green-500 text-white hover:bg-green-600' 
+                    : 'hover:bg-primary/20 hover:text-primary'
+                }`}
               >
-                <Copy className="h-4 w-4" />
+                {copied ? (
+                  <Check className="h-4 w-4" />
+                ) : (
+                  <Copy className="h-4 w-4" />
+                )}
               </Button>
             </div>
           </div>
