@@ -4,6 +4,26 @@ import { useToast } from "@/components/ui/use-toast";
 
 export const PixelHero = () => {
   const { toast } = useToast();
+  const contractAddress = "H8XPbZdXakPSSzAcmNvo8vHoZ1ji59F21UHwga4rpump";
+
+  const handleCopyAddress = async () => {
+    try {
+      await navigator.clipboard.writeText(contractAddress);
+      toast({
+        title: "Kopierad!",
+        description: "Kontraktadressen har kopierats till urklipp",
+        duration: 2000,
+        className: "bg-primary/90 border-2 border-black text-white font-pixel",
+      });
+    } catch (err) {
+      toast({
+        title: "Fel",
+        description: "Kunde inte kopiera adressen",
+        duration: 2000,
+        variant: "destructive",
+      });
+    }
+  };
 
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-start pt-8 md:pt-16 px-4">
@@ -40,9 +60,11 @@ export const PixelHero = () => {
             <h3 className="font-pixel text-primary mb-2">Liquidity</h3>
             <p className="font-pixel text-green-500">LOCKED</p>
           </div>
-          <div className="pixel-panel">
+          <div className="pixel-panel cursor-pointer" onClick={handleCopyAddress}>
             <h3 className="font-pixel text-primary mb-2">Contract</h3>
-            <p className="font-pixel text-green-500">REVOKED</p>
+            <p className="font-pixel text-green-500 truncate hover:text-green-400 transition-colors">
+              {contractAddress}
+            </p>
           </div>
         </div>
 
