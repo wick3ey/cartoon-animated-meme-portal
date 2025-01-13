@@ -27,7 +27,7 @@ export const PixelHero = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-start pt-4 md:pt-16 px-2 md:px-4">
+    <div className="relative min-h-[calc(100vh-2rem)] flex flex-col items-center justify-start pt-2 sm:pt-4 md:pt-16 px-2 sm:px-4 md:px-6">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ export const PixelHero = () => {
         className="text-center w-full max-w-4xl mx-auto"
       >
         <motion.h1 
-          className="font-pixel text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-primary pixel-shadow glow-text mb-4 md:mb-8"
+          className="font-pixel text-2xl sm:text-3xl md:text-5xl lg:text-7xl text-primary pixel-shadow glow-text mb-3 sm:mb-4 md:mb-8"
           animate={{
             textShadow: [
               "0 0 10px rgba(139,92,246,0.5)",
@@ -52,18 +52,18 @@ export const PixelHero = () => {
           McChicken
         </motion.h1>
 
-        <p className="font-pixel text-base sm:text-lg md:text-xl lg:text-2xl mb-8 md:mb-12 text-white glow-text">
+        <p className="font-pixel text-sm sm:text-base md:text-xl lg:text-2xl mb-6 sm:mb-8 md:mb-12 text-white glow-text px-2">
           The Most Epic Token on Solana! 🍟
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mb-6 md:mb-8 max-w-lg mx-auto px-4">
-          <div className="pixel-panel">
-            <h3 className="font-pixel text-sm md:text-base text-primary mb-2">Liquidity</h3>
-            <p className="font-pixel text-sm md:text-base text-green-500">LOCKED</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 md:gap-4 mb-4 sm:mb-6 md:mb-8 max-w-lg mx-auto px-2 sm:px-4">
+          <div className="pixel-panel p-3 sm:p-4 md:p-6">
+            <h3 className="font-pixel text-xs sm:text-sm md:text-base text-primary mb-1 sm:mb-2">Liquidity</h3>
+            <p className="font-pixel text-xs sm:text-sm md:text-base text-green-500">LOCKED</p>
           </div>
-          <div className="pixel-panel cursor-pointer" onClick={handleCopyAddress}>
-            <h3 className="font-pixel text-sm md:text-base text-primary mb-2">Contract</h3>
-            <p className="font-pixel text-sm md:text-base text-green-500 truncate hover:text-green-400 transition-colors">
+          <div className="pixel-panel p-3 sm:p-4 md:p-6 cursor-pointer" onClick={handleCopyAddress}>
+            <h3 className="font-pixel text-xs sm:text-sm md:text-base text-primary mb-1 sm:mb-2">Contract</h3>
+            <p className="font-pixel text-xs sm:text-sm md:text-base text-green-500 truncate hover:text-green-400 transition-colors">
               {truncatedAddress}
             </p>
           </div>
@@ -73,7 +73,7 @@ export const PixelHero = () => {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto mb-8 md:mb-16 relative"
+          className="w-36 h-36 sm:w-48 sm:h-48 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto mb-6 sm:mb-8 md:mb-16 relative"
         >
           <img
             src="/lovable-uploads/cad35cd2-c8fc-4390-b961-d4ec8bcac9e3.png"
@@ -82,7 +82,7 @@ export const PixelHero = () => {
           />
         </motion.div>
 
-        <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4">
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center px-2 sm:px-4">
           <a 
             href="https://pump.fun/coin/H8XPbZdXakPSSzAcmNvo8vHoZ1ji59F21UHwga4rpump" 
             target="_blank" 
@@ -90,7 +90,7 @@ export const PixelHero = () => {
             className="w-full sm:w-auto"
           >
             <ComicButton 
-              className="pixel-button bg-gradient-to-r from-primary to-accent pulse-glow w-full sm:w-auto"
+              className="pixel-button text-sm sm:text-base md:text-xl bg-gradient-to-r from-primary to-accent pulse-glow w-full sm:w-auto py-2 sm:py-3"
             >
               Buy Now! 💎
             </ComicButton>
@@ -102,7 +102,7 @@ export const PixelHero = () => {
             className="w-full sm:w-auto"
           >
             <ComicButton 
-              className="pixel-button bg-gradient-to-r from-secondary to-accent w-full sm:w-auto"
+              className="pixel-button text-sm sm:text-base md:text-xl bg-gradient-to-r from-secondary to-accent w-full sm:w-auto py-2 sm:py-3"
             >
               Join Telegram 🍗
             </ComicButton>
