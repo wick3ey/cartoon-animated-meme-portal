@@ -17,8 +17,6 @@ export const PixelHero = () => {
 
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-start pt-8 md:pt-16 px-4">
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(139,92,246,0.05)_1px,transparent_0),linear-gradient(rgba(139,92,246,0.05)_1px,transparent_0)] bg-[length:24px_24px]" />
-
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -44,7 +42,7 @@ export const PixelHero = () => {
         </motion.h1>
 
         <p className="font-pixel text-lg sm:text-xl md:text-2xl mb-12 text-white glow-text">
-          The Most Epic Token on Solana! 🍗
+          The Most Epic Token on Solana! 🍟
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
