@@ -6,27 +6,22 @@ export const SocialLinks = () => {
   const socials = [
     {
       name: "Telegram",
-      icon: "/placeholder.svg",
       url: "https://t.me/bawkmcchicken",
     },
     {
       name: "Twitter",
-      icon: "/placeholder.svg",
       url: "#",
     },
     {
       name: "Raydium",
-      icon: "/placeholder.svg",
       url: `https://raydium.io/swap/?inputCurrency=sol&outputCurrency=H8XPbZdXakPSSzAcmNvo8vHoZ1ji59F21UHwga4rpump`,
     },
     {
       name: "Magic Eden",
-      icon: "/placeholder.svg",
       url: "#",
     },
     {
       name: "Tensor",
-      icon: "/placeholder.svg",
       url: "#",
     }
   ];
@@ -56,7 +51,7 @@ export const SocialLinks = () => {
             key={social.name}
             href={social.url}
             onClick={handleSocialClick(social.name, social.url)}
-            className="transform transition-all duration-200 hover:scale-110"
+            className="pixel-button text-sm py-2 px-4"
             whileHover={{ 
               scale: 1.1,
               rotate: [0, -5, 5, 0],
@@ -66,11 +61,7 @@ export const SocialLinks = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
           >
-            <img 
-              src={social.icon} 
-              alt={social.name}
-              className="w-12 h-12 md:w-16 md:h-16 object-contain"
-            />
+            {social.name}
           </motion.a>
         ))}
       </motion.div>
