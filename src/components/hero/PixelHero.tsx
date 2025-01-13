@@ -87,7 +87,7 @@ export const PixelHero = () => {
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center items-center w-full max-w-xl mx-auto px-4">
           <a 
-            href="https://pump.fun/coin/H8XPbZdXakPSSzAcmNvo8vHoZ1ji59F21UHwga4rpump" 
+            href="https://dexscreener.com/solana/h8xpbzdxakpsszacmnvo8vhoz1ji59f21uhwga4rpump" 
             target="_blank" 
             rel="noopener noreferrer"
             className="w-full sm:w-auto"
