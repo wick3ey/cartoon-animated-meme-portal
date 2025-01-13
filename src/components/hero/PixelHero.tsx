@@ -47,6 +47,17 @@ export const PixelHero = () => {
           The Most Epic Token on Solana! 🎮
         </p>
 
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+          <div className="pixel-panel">
+            <h3 className="font-pixel text-primary mb-2">Liquidity</h3>
+            <p className="font-pixel text-green-500">LOCKED</p>
+          </div>
+          <div className="pixel-panel">
+            <h3 className="font-pixel text-primary mb-2">Contract</h3>
+            <p className="font-pixel text-green-500">REVOKED</p>
+          </div>
+        </div>
+
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -59,17 +70,6 @@ export const PixelHero = () => {
             className="w-full h-full object-contain animate-float"
           />
         </motion.div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-          <div className="pixel-panel">
-            <h3 className="font-pixel text-primary mb-2">Liquidity</h3>
-            <p className="font-pixel text-green-500">LOCKED</p>
-          </div>
-          <div className="pixel-panel">
-            <h3 className="font-pixel text-primary mb-2">Contract</h3>
-            <p className="font-pixel text-green-500">REVOKED</p>
-          </div>
-        </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <ComicButton 
