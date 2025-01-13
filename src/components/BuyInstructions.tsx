@@ -67,8 +67,8 @@ export const BuyInstructions = () => {
         
         <InstructionStep
           number={4}
-          title="Open Pump.fun"
-          description="Visit pump.fun to buy $BAWK directly."
+          title="Swap in Phantom"
+          description="Open Phantom wallet, click on Swap, and exchange your SOL for $BAWK tokens directly in the wallet."
           icon="🔄"
         />
 
