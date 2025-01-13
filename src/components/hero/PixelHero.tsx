@@ -5,7 +5,6 @@ import { useToast } from "@/components/ui/use-toast";
 export const PixelHero = () => {
   const { toast } = useToast();
   const contractAddress = "H8XPbZdXakPSSzAcmNvo8vHoZ1ji59F21UHwga4rpump";
-  const truncatedAddress = `${contractAddress.slice(0, 4)}...${contractAddress.slice(-4)}`;
 
   const handleCopyAddress = async () => {
     try {
@@ -64,7 +63,7 @@ export const PixelHero = () => {
           <div className="pixel-panel cursor-pointer" onClick={handleCopyAddress}>
             <h3 className="font-pixel text-primary mb-2">Contract</h3>
             <p className="font-pixel text-green-500 truncate hover:text-green-400 transition-colors">
-              {truncatedAddress}
+              {contractAddress}
             </p>
           </div>
         </div>
