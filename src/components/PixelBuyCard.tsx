@@ -42,12 +42,6 @@ export const PixelBuyCard = () => {
             Buy $BAWK 🚀
           </motion.button>
         </div>
-
-        <div className="mt-6 text-center">
-          <p className="font-pixel text-xs text-gray-400">
-            Contract: H8XPbZdXakPSSzAcmNvo8vHoZ1ji59F21UHwga4rpump
-          </p>
-        </div>
       </motion.div>
     </div>
   );
