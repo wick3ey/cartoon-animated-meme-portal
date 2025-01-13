@@ -75,21 +75,21 @@ export const PixelStats = () => {
       <PixelStat 
         label="Supply" 
         value="1B" 
-        icon="🎮" 
+        icon="🍗" 
         color="#8B5CF6"
         description="Total token supply with anti-whale mechanics"
       />
       <PixelStat 
         label="Holders" 
         value="Loading.." 
-        icon="👾" 
+        icon="🐔" 
         color="#F97316"
         description="Growing community of diamond hands"
       />
       <PixelStat 
         label="Market Cap" 
         value="Loading.." 
-        icon="🕹️" 
+        icon="🍟" 
         color="#D946EF"
         description="Real-time market capitalization"
       />
