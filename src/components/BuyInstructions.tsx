@@ -37,35 +37,6 @@ const InstructionStep = ({ number, title, description, icon }: {
 };
 
 export const BuyInstructions = () => {
-  const { toast } = useToast();
-  const [copied, setCopied] = useState(false);
-  const contractAddress = "H8XPbZdXakPSSzAcmNvo8vHoZ1ji59F21UHwga4rpump";
-  const truncatedAddress = `${contractAddress.slice(0, 4)}...${contractAddress.slice(-4)}`;
-
-  const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(contractAddress);
-      setCopied(true);
-      toast({
-        title: "Kopierad!",
-        description: "Kontraktadressen har kopierats till urklipp",
-        className: "bg-green-500 border-2 border-black text-white font-pixel",
-        duration: 2000,
-      });
-      
-      setTimeout(() => setCopied(false), 2000);
-      
-    } catch (err) {
-      console.error("Kopieringsfel:", err);
-      toast({
-        title: "Fel",
-        description: "Kunde inte kopiera adressen",
-        className: "bg-red-500 border-2 border-black text-white font-pixel",
-        duration: 2000,
-      });
-    }
-  };
-
   return (
     <div className="max-w-4xl mx-auto px-4">
       <h2 className="font-pixel text-3xl text-center text-primary mb-12 glow-text">
@@ -100,38 +71,6 @@ export const BuyInstructions = () => {
           description="Visit pump.fun to buy $BAWK directly."
           icon="🔄"
         />
-
-        <motion.div 
-          className="pixel-panel relative overflow-hidden"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          <div className="p-6 space-y-4">
-            <h3 className="font-pixel text-lg text-primary mb-2 glow-text">Kontraktadress</h3>
-            <div className="flex items-center gap-3 bg-black/30 p-4 rounded-lg border-2 border-primary/20">
-              <div className="flex-1 font-mono text-sm text-gray-300 break-all select-all">
-                {truncatedAddress}
-              </div>
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={handleCopy}
-                className={`min-w-[40px] transition-all duration-200 ${
-                  copied 
-                    ? 'bg-green-500 text-white hover:bg-green-600' 
-                    : 'hover:bg-primary/20 hover:text-primary'
-                }`}
-              >
-                {copied ? (
-                  <Check className="h-4 w-4" />
-                ) : (
-                  <Copy className="h-4 w-4" />
-                )}
-              </Button>
-            </div>
-          </div>
-        </motion.div>
 
         <motion.div 
           className="pixel-panel bg-gradient-to-r from-primary/20 to-accent/20"
