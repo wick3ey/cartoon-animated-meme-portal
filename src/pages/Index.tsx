@@ -12,7 +12,7 @@ const Index = () => {
           <div className="absolute w-3 h-3 bg-green-500 rounded-full animate-pulse" />
           <div className="absolute w-3 h-3 bg-green-400 rounded-full animate-ping" />
         </div>
-        <span className="text-white font-pixel text-sm">We are live on pump.fun right now</span>
+        <span className="text-white font-pixel text-sm">We are live on pump.fun right now 🍗</span>
       </div>
 
       <PixelHero />

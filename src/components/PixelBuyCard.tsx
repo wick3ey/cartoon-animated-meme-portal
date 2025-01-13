@@ -39,7 +39,7 @@ export const PixelBuyCard = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Buy $BAWK 🚀
+            Buy $BAWK 🍗
           </motion.button>
         </div>
       </motion.div>

@@ -11,7 +11,7 @@ export const PriceAlertForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: "🔔 Alert Set!",
+      title: "🍗 Alert Set!",
       description: `We'll notify you when the price reaches $${price}`,
       duration: 3000,
     });
@@ -50,7 +50,7 @@ export const PriceAlertForm = () => {
           />
         </div>
         <ComicButton className="w-full">
-          Set Alert 🔔
+          Set Alert 🍗
         </ComicButton>
       </form>
     </motion.div>
