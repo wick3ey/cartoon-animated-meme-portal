@@ -1,7 +1,6 @@
 import { PixelHero } from "../components/hero/PixelHero";
 import { PixelStats } from "../components/stats/PixelStats";
 import { BuyInstructions } from "../components/BuyInstructions";
-import { SocialLinks } from "../components/SocialLinks";
 
 const Index = () => {
   return (
@@ -10,7 +9,7 @@ const Index = () => {
         <img 
           src="/lovable-uploads/7371edd6-14ca-42dd-8fe9-73099a4fb737.png" 
           alt="McDonalds Logo" 
-          className="w-12 h-12 md:w-16 md:h-16 rounded-lg shadow-lg"
+          className="w-16 h-16 md:w-24 md:h-24 rounded-lg shadow-xl hover:scale-105 transition-transform"
         />
       </div>
 
@@ -31,10 +30,6 @@ const Index = () => {
       <section className="py-20 px-4">
         <BuyInstructions />
       </section>
-
-      <footer className="py-12 px-4">
-        <SocialLinks />
-      </footer>
     </div>
   );
 };
